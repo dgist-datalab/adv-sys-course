@@ -1,0 +1,73 @@
+From 56f1834dca72879672a9af557ec75b57af235228 Mon Sep 17 00:00:00 2001
+From: Juhyung Park <qkrwngud825@gmail.com>
+Date: Tue, 1 Mar 2022 20:51:23 +0900
+Subject: [PATCH 2/7] Use zstd with no options for faster compression
+
+This is taking a whole 30 seconds.
+
+Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
+---
+ arch/mips/boot/compressed/Makefile | 2 +-
+ arch/s390/boot/compressed/Makefile | 2 +-
+ arch/x86/boot/compressed/Makefile  | 2 +-
+ scripts/Makefile.lib               | 5 +----
+ 4 files changed, 4 insertions(+), 7 deletions(-)
+
+diff --git a/arch/mips/boot/compressed/Makefile b/arch/mips/boot/compressed/Makefile
+index 705b9e7f8035..415da49578f9 100644
+--- a/arch/mips/boot/compressed/Makefile
++++ b/arch/mips/boot/compressed/Makefile
+@@ -85,7 +85,7 @@ tool_$(CONFIG_KERNEL_LZ4)     = lz4
+ tool_$(CONFIG_KERNEL_LZMA)    = lzma
+ tool_$(CONFIG_KERNEL_LZO)     = lzo
+ tool_$(CONFIG_KERNEL_XZ)      = xzkern
+-tool_$(CONFIG_KERNEL_ZSTD)    = zstd22
++tool_$(CONFIG_KERNEL_ZSTD)    = zstd
+ 
+ targets += vmlinux.bin.z
+ 
+diff --git a/arch/s390/boot/compressed/Makefile b/arch/s390/boot/compressed/Makefile
+index 3b860061e84d..9e3fab0c7108 100644
+--- a/arch/s390/boot/compressed/Makefile
++++ b/arch/s390/boot/compressed/Makefile
+@@ -81,7 +81,7 @@ $(obj)/vmlinux.bin.lzo: $(vmlinux.bin.all-y) FORCE
+ $(obj)/vmlinux.bin.xz: $(vmlinux.bin.all-y) FORCE
+ 	$(call if_changed,xzkern)
+ $(obj)/vmlinux.bin.zst: $(vmlinux.bin.all-y) FORCE
+-	$(call if_changed,zstd22)
++	$(call if_changed,zstd)
+ 
+ OBJCOPYFLAGS_piggy.o := -I binary -O elf64-s390 -B s390:64-bit --rename-section .data=.vmlinux.bin.compressed
+ $(obj)/piggy.o: $(obj)/vmlinux.bin$(suffix-y) FORCE
+diff --git a/arch/x86/boot/compressed/Makefile b/arch/x86/boot/compressed/Makefile
+index e11813646051..de3cba829a62 100644
+--- a/arch/x86/boot/compressed/Makefile
++++ b/arch/x86/boot/compressed/Makefile
+@@ -136,7 +136,7 @@ $(obj)/vmlinux.bin.lzo: $(vmlinux.bin.all-y) FORCE
+ $(obj)/vmlinux.bin.lz4: $(vmlinux.bin.all-y) FORCE
+ 	$(call if_changed,lz4)
+ $(obj)/vmlinux.bin.zst: $(vmlinux.bin.all-y) FORCE
+-	$(call if_changed,zstd22)
++	$(call if_changed,zstd)
+ 
+ suffix-$(CONFIG_KERNEL_GZIP)	:= gz
+ suffix-$(CONFIG_KERNEL_BZIP2)	:= bz2
+diff --git a/scripts/Makefile.lib b/scripts/Makefile.lib
+index 54582673fc1a..e74e07b16011 100644
+--- a/scripts/Makefile.lib
++++ b/scripts/Makefile.lib
+@@ -485,10 +485,7 @@ quiet_cmd_xzmisc = XZMISC  $@
+ # be used because it would require zstd to allocate a 128 MB buffer.
+ 
+ quiet_cmd_zstd = ZSTD    $@
+-      cmd_zstd = { cat $(real-prereqs) | $(ZSTD) -19; $(size_append); } > $@
+-
+-quiet_cmd_zstd22 = ZSTD22  $@
+-      cmd_zstd22 = { cat $(real-prereqs) | $(ZSTD) -22 --ultra; $(size_append); } > $@
++      cmd_zstd = { cat $(real-prereqs) | $(ZSTD); $(size_append); } > $@
+ 
+ # ASM offsets
+ # ---------------------------------------------------------------------------
+-- 
+2.35.1
+
