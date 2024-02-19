@@ -1,20 +1,20 @@
-From 79bc1028fbb5d8fbf8809080bd62f91e18237b9d Mon Sep 17 00:00:00 2001
+From a7e1b3628b915264d56f8cf4b8cb70b3680cac8d Mon Sep 17 00:00:00 2001
 From: Juhyung Park <qkrwngud825@gmail.com>
 Date: Tue, 1 Mar 2022 20:52:43 +0900
-Subject: [PATCH 4/7] x86: initial 22sys_defconfig from
+Subject: [PATCH 04/10] x86: initial 24sys_defconfig from
  /boot/config-5.15.0-22-generic
 
 Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
 ---
- arch/x86/configs/22sys_defconfig | 11364 +++++++++++++++++++++++++++++
+ arch/x86/configs/24sys_defconfig | 11364 +++++++++++++++++++++++++++++
  1 file changed, 11364 insertions(+)
- create mode 100644 arch/x86/configs/22sys_defconfig
+ create mode 100644 arch/x86/configs/24sys_defconfig
 
-diff --git a/arch/x86/configs/22sys_defconfig b/arch/x86/configs/22sys_defconfig
+diff --git a/arch/x86/configs/24sys_defconfig b/arch/x86/configs/24sys_defconfig
 new file mode 100644
-index 000000000000..ae49849a5a29
+index 0000000000000..ae49849a5a299
 --- /dev/null
-+++ b/arch/x86/configs/22sys_defconfig
++++ b/arch/x86/configs/24sys_defconfig
 @@ -0,0 +1,11364 @@
 +#
 +# Automatically generated file; DO NOT EDIT.
@@ -11381,5 +11381,5 @@ index 000000000000..ae49849a5a29
 +# end of Kernel Testing and Coverage
 +# end of Kernel hacking
 -- 
-2.35.1
+2.43.0
 

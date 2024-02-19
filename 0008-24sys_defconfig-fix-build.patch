@@ -1,17 +1,17 @@
-From 3a130281bce9d91e06e6c56ee06c0763c4ed18ac Mon Sep 17 00:00:00 2001
+From 0eadc04f78b511df4dcfb1314aeae8bf991ba23b Mon Sep 17 00:00:00 2001
 From: Juhyung Park <qkrwngud825@gmail.com>
 Date: Tue, 1 Mar 2022 21:26:34 +0900
-Subject: [PATCH 8/8] 22sys_defconfig: fix build
+Subject: [PATCH 08/10] 24sys_defconfig: fix build
 
 Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
 ---
- arch/x86/configs/22sys_defconfig | 4 ++--
+ arch/x86/configs/24sys_defconfig | 4 ++--
  1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/arch/x86/configs/22sys_defconfig b/arch/x86/configs/22sys_defconfig
-index 40ae4f8bc03c..793e556b3149 100644
---- a/arch/x86/configs/22sys_defconfig
-+++ b/arch/x86/configs/22sys_defconfig
+diff --git a/arch/x86/configs/24sys_defconfig b/arch/x86/configs/24sys_defconfig
+index 40ae4f8bc03c7..793e556b31499 100644
+--- a/arch/x86/configs/24sys_defconfig
++++ b/arch/x86/configs/24sys_defconfig
 @@ -5295,7 +5295,7 @@ CONFIG_SECONDARY_TRUSTED_KEYRING=y
  CONFIG_SYSTEM_BLACKLIST_KEYRING=y
  CONFIG_SYSTEM_BLACKLIST_HASH_LIST=""
@@ -31,5 +31,5 @@ index 40ae4f8bc03c..793e556b3149 100644
  # CONFIG_READABLE_ASM is not set
  # CONFIG_HEADERS_INSTALL is not set
 -- 
-2.35.1
+2.43.0
 

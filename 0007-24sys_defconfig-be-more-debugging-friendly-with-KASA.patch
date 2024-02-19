@@ -1,17 +1,17 @@
-From 3cbfccddc803a3db4e6353ab645a48127c05461d Mon Sep 17 00:00:00 2001
+From b61f5d9b93b35f8b0693b74cfa1da9d27d333763 Mon Sep 17 00:00:00 2001
 From: Juhyung Park <qkrwngud825@gmail.com>
 Date: Tue, 1 Mar 2022 20:53:24 +0900
-Subject: [PATCH 7/7] 22sys_defconfig: be more debugging-friendly with KASAN
+Subject: [PATCH 07/10] 24sys_defconfig: be more debugging-friendly with KASAN
 
 Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
 ---
- arch/x86/configs/22sys_defconfig | 21 ++++++++++++++-------
+ arch/x86/configs/24sys_defconfig | 21 ++++++++++++++-------
  1 file changed, 14 insertions(+), 7 deletions(-)
 
-diff --git a/arch/x86/configs/22sys_defconfig b/arch/x86/configs/22sys_defconfig
-index bed77d0ab862..40ae4f8bc03c 100644
---- a/arch/x86/configs/22sys_defconfig
-+++ b/arch/x86/configs/22sys_defconfig
+diff --git a/arch/x86/configs/24sys_defconfig b/arch/x86/configs/24sys_defconfig
+index bed77d0ab8629..40ae4f8bc03c7 100644
+--- a/arch/x86/configs/24sys_defconfig
++++ b/arch/x86/configs/24sys_defconfig
 @@ -17,6 +17,7 @@ CONFIG_CC_HAS_ASM_GOTO=y
  CONFIG_CC_HAS_ASM_GOTO_OUTPUT=y
  CONFIG_CC_HAS_ASM_INLINE=y
@@ -93,5 +93,5 @@ index bed77d0ab862..40ae4f8bc03c 100644
  
  #
 -- 
-2.35.1
+2.43.0
 

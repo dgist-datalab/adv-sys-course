@@ -1,17 +1,17 @@
-From 212c63c774f2a867d039251ccc92ff9a9393be45 Mon Sep 17 00:00:00 2001
+From f970ac26c0ae0315fdeb787128c8237473547aa7 Mon Sep 17 00:00:00 2001
 From: Juhyung Park <qkrwngud825@gmail.com>
 Date: Tue, 1 Mar 2022 20:53:13 +0900
-Subject: [PATCH 6/7] 22sys_defconfig: clean-up for 22sys VMs
+Subject: [PATCH 06/10] 24sys_defconfig: clean-up for 24sys VMs
 
 Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
 ---
- arch/x86/configs/22sys_defconfig | 9842 +++++++-----------------------
+ arch/x86/configs/24sys_defconfig | 9842 +++++++-----------------------
  1 file changed, 2167 insertions(+), 7675 deletions(-)
 
-diff --git a/arch/x86/configs/22sys_defconfig b/arch/x86/configs/22sys_defconfig
-index 2060ec7ed55a..bed77d0ab862 100644
---- a/arch/x86/configs/22sys_defconfig
-+++ b/arch/x86/configs/22sys_defconfig
+diff --git a/arch/x86/configs/24sys_defconfig b/arch/x86/configs/24sys_defconfig
+index 2060ec7ed55a4..bed77d0ab8629 100644
+--- a/arch/x86/configs/24sys_defconfig
++++ b/arch/x86/configs/24sys_defconfig
 @@ -54,9 +54,8 @@ CONFIG_POSIX_MQUEUE_SYSCTL=y
  CONFIG_WATCH_QUEUE=y
  CONFIG_CROSS_MEMORY_ATTACH=y
@@ -11623,5 +11623,5 @@ index 2060ec7ed55a..bed77d0ab862 100644
  # end of Kernel Testing and Coverage
  # end of Kernel hacking
 -- 
-2.35.1
+2.43.0
 

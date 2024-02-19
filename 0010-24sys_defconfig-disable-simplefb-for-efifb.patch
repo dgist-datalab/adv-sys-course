@@ -1,0 +1,26 @@
+From 3c44d18ac8744f71ca1c2cee81f05ca03fbe297b Mon Sep 17 00:00:00 2001
+From: Juhyung Park <qkrwngud825@gmail.com>
+Date: Mon, 19 Feb 2024 22:41:40 +0900
+Subject: [PATCH 10/10] 24sys_defconfig: disable simplefb for efifb
+
+Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
+---
+ arch/x86/configs/24sys_defconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/x86/configs/24sys_defconfig b/arch/x86/configs/24sys_defconfig
+index fc1b5630454f1..9ac574b9dbe51 100644
+--- a/arch/x86/configs/24sys_defconfig
++++ b/arch/x86/configs/24sys_defconfig
+@@ -1724,7 +1724,7 @@ CONFIG_DMI_SCAN_MACHINE_NON_EFI_FALLBACK=y
+ # CONFIG_ISCSI_IBFT is not set
+ # CONFIG_FW_CFG_SYSFS is not set
+ CONFIG_SYSFB=y
+-CONFIG_SYSFB_SIMPLEFB=y
++# CONFIG_SYSFB_SIMPLEFB is not set
+ # CONFIG_GOOGLE_FIRMWARE is not set
+ 
+ #
+-- 
+2.43.0
+

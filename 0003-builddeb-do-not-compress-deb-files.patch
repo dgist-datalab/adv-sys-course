@@ -1,7 +1,7 @@
-From 4f5217ad32933aa0dbd6665d908e08db301e7a28 Mon Sep 17 00:00:00 2001
+From 77a6cdb81edec2781ab638a6861bc5b3b9d6678f Mon Sep 17 00:00:00 2001
 From: Juhyung Park <qkrwngud825@gmail.com>
 Date: Tue, 1 Mar 2022 20:52:13 +0900
-Subject: [PATCH 3/7] builddeb: do not compress deb files
+Subject: [PATCH 03/10] builddeb: do not compress deb files
 
 Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
 ---
@@ -9,10 +9,10 @@ Signed-off-by: Juhyung Park <qkrwngud825@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/scripts/package/builddeb b/scripts/package/builddeb
-index 91a502bb97e8..6af20a67f17b 100755
+index d7dd0d04c70c9..edc36bf005d5a 100755
 --- a/scripts/package/builddeb
 +++ b/scripts/package/builddeb
-@@ -50,7 +50,7 @@ create_package() {
+@@ -48,7 +48,7 @@ create_package() {
  
  	# Create the package
  	dpkg-gencontrol -p$pname -P"$pdir"
@@ -20,7 +20,7 @@ index 91a502bb97e8..6af20a67f17b 100755
 +	dpkg-deb $dpkg_deb_opts -Znone --build "$pdir" ..
  }
  
- deploy_kernel_headers () {
+ install_linux_image () {
 -- 
-2.35.1
+2.43.0
 
